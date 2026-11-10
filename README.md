@@ -1,71 +1,169 @@
-﻿🚀 Đồ Án: Hệ Thống Quản Lý Bán Đồng Hồ - DUY WATCHES
-📝 Giới thiệu dự án
-DUY WATCHES là phần mềm quản lý bán hàng đồng hồ chuyên nghiệp dành cho các cửa hàng bán lẻ. Dự án được xây dựng bằng WinForms trên nền tảng .NET 8, hướng tới việc số hóa quy trình kinh doanh, kiểm soát tồn kho và quản lý nhân sự hiệu quả.
+<div align="center">
 
-Đây là phiên bản hoàn thiện (Final Version) của đồ án với trọng tâm:
+# Quản lý ⌚ DUY WATCHES
 
-Tự động hóa quy trình bán hàng và thống kê doanh thu thời gian thực.
+### Hệ thống quản lý bán đồng hồ
 
-Đảm bảo tính toàn vẹn dữ liệu (Data Integrity) cho hóa đơn lịch sử.
+Ứng dụng desktop hỗ trợ cửa hàng quản lý sản phẩm, khách hàng, nhân viên,
+hóa đơn và hoạt động kinh doanh trên một nền tảng tập trung.
 
-Theo dõi chặt chẽ hệ thống qua Nhật ký hoạt động (Activity Log).
+<p>
+  <img src="https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET 8">
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=csharp&logoColor=white" alt="C Sharp">
+  <img src="https://img.shields.io/badge/WinForms-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Forms">
+</p>
+<p>
+  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server">
+  <img src="https://img.shields.io/badge/EF_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="Entity Framework Core">
+  <img src="https://img.shields.io/badge/LINQ-68217A?style=for-the-badge&logo=.net&logoColor=white" alt="LINQ">
+  <img src="https://img.shields.io/badge/ClosedXML-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="ClosedXML">
+</p>
 
-Tối ưu hóa trải nghiệm người dùng (UI/UX) và tinh gọn logic xử lý (Clean Code).
+</div>
 
-🛠 Công nghệ & Kiến trúc (Tech Stack)
-Ngôn ngữ: C# (.NET 8, net8.0-windows)
+---
 
-UI Framework: Windows Forms (WinForms)
+## 📌 Giới thiệu
 
-Cơ sở dữ liệu: SQL Server
+**DUY WATCHES** là đồ án xây dựng hệ thống quản lý bán đồng hồ dành cho cửa
+hàng bán lẻ. Phần mềm số hóa quy trình từ quản lý danh mục và tồn kho đến
+bán hàng, xuất hóa đơn, thống kê doanh thu và theo dõi nhật ký hoạt động.
 
-ORM: Entity Framework Core
+### Mục tiêu
 
-Truy vấn dữ liệu: LINQ
+- Tập trung dữ liệu sản phẩm, thương hiệu, khách hàng và nhân viên.
+- Đơn giản hóa thao tác bán hàng và quản lý hóa đơn.
+- Hỗ trợ phân quyền theo vai trò người dùng.
+- Bảo toàn thông tin lịch sử giao dịch bằng dữ liệu snapshot trên hóa đơn.
+- Cung cấp nhật ký hoạt động để dễ dàng kiểm tra và truy vết.
 
-Migration: Code-First Migration
+## ✨ Tính năng chính
 
-Thư viện bổ trợ: ClosedXML (Xử lý và xuất/nhập dữ liệu Excel)
+### 🔐 Đăng nhập và phân quyền
 
-✨ Các tính năng nổi bật
-1) 🔐 Quản trị Hệ thống & Phân quyền
-Đăng nhập & Phân quyền: Hỗ trợ 3 vai trò (Admin, Quản lý cửa hàng, Nhân viên bán hàng). Menu và chức năng tự động hiển thị theo quyền hạn.
+- Đăng nhập bằng tài khoản nhân viên.
+- Phân quyền theo vai trò: **Admin**, **Quản lý cửa hàng** và **Nhân viên bán hàng**.
+- Hiển thị chức năng phù hợp với quyền của người dùng.
 
-Nhật ký hoạt động (Activity Log - Tính năng mới): Tự động ghi nhận mọi thao tác quan trọng (thêm, sửa, xóa, đăng nhập, thanh toán) của người dùng, giúp Admin dễ dàng truy vết và quản lý rủi ro.
+### 🛒 Bán hàng và hóa đơn
 
-2) 🛒 Nghiệp vụ Bán hàng cốt lõi
-Tạo hóa đơn, thêm sản phẩm vào giỏ hàng, tính toán tổng tiền và quản lý trạng thái thanh toán.
+- Tạo hóa đơn, thêm sản phẩm vào giỏ hàng và tính tổng tiền.
+- Quản lý trạng thái thanh toán.
+- Lưu snapshot thông tin khách hàng, nhân viên và sản phẩm tại thời điểm bán.
+- Tích hợp điểm tích lũy khách hàng.
 
-Snapshot Hóa đơn: Tự động "chụp" lại thông tin khách hàng, nhân viên và tên sản phẩm tại thời điểm bán, đảm bảo dữ liệu lịch sử không bị thay đổi dù thông tin gốc trong database bị cập nhật.
+### 📦 Quản lý danh mục
 
-3) 📊 Dashboard Tổng quan (Real-time)
-Trang chủ đóng vai trò là trung tâm kiểm soát, hiển thị ngay lập tức:
+- Sản phẩm và thông số kỹ thuật đồng hồ.
+- Thương hiệu và loại đồng hồ.
+- Khách hàng và nhân viên.
+- Kiểm tra dữ liệu đầu vào trước khi lưu.
 
-Doanh thu trong ngày.
+### 📊 Thống kê và nhật ký
 
-Số lượng đơn hàng & Khách hàng mới.
+- Dashboard tổng quan doanh thu, đơn hàng và khách hàng.
+- Thống kê tiền bán theo thời gian.
+- Cảnh báo sản phẩm sắp hết hàng.
+- Ghi nhận các thao tác thêm, sửa, xóa, đăng nhập và thanh toán.
 
-Cảnh báo sản phẩm sắp hết hàng.
+### ⚙️ Tự động hóa cơ sở dữ liệu
 
-Danh sách hóa đơn vừa giao dịch.
+- Tự động chạy `Database.Migrate()` khi khởi động ứng dụng.
+- Tự động backfill snapshot cho các hóa đơn cũ.
+- Entity Framework Core Code First với thư mục migration đi kèm dự án.
 
-4) 📦 Quản lý Danh mục (CRUD Tối ưu)
-Quản lý sản phẩm, thông số kỹ thuật, thương hiệu, loại đồng hồ.
+## 🧰 Công nghệ sử dụng
 
-Quản lý thông tin nhân viên, khách hàng.
+| Nhóm            | Công nghệ                 |
+| --------------- | ------------------------- |
+| Ngôn ngữ        | C#                        |
+| Nền tảng        | .NET 8 (`net8.0-windows`) |
+| Giao diện       | Windows Forms             |
+| Cơ sở dữ liệu   | Microsoft SQL Server      |
+| ORM             | Entity Framework Core 9   |
+| Truy vấn        | LINQ                      |
+| Migration       | EF Core Code First        |
+| Xuất/nhập Excel | ClosedXML                 |
 
-Logic tại các Form đã được tinh chỉnh, kiểm tra tính hợp lệ của dữ liệu (Validate) khắt khe và loại bỏ hoàn toàn các thao tác dư thừa.
+## 🏗️ Kiến trúc và cấu trúc dự án
 
-5) ⚙️ Tự động hóa Cơ sở dữ liệu
-Cơ chế Backfill: Tự động đồng bộ và sửa chữa dữ liệu hóa đơn cũ khi khởi động.
+```text
+LTQL_QLBHDongHo/
+├── Data/             # Entity, DbContext, session và activity logger
+├── Forms/            # Các màn hình WinForms của ứng dụng
+├── Migrations/       # EF Core migrations
+├── Images/           # Tài nguyên hình ảnh
+├── Reports/          # Báo cáo
+├── App.config        # Cấu hình chuỗi kết nối
+├── Program.cs        # Điểm khởi chạy ứng dụng
+└── *.csproj          # Cấu hình dự án và package
+```
 
-Tự động gọi Database.Migrate() lúc chạy app, tự động cấu trúc lại CSDL mà không cần chạy lệnh thủ công trên máy mới.
+### Các thực thể chính
 
-🏗️ Cấu trúc Thực thể (Database Schema)
-Hệ thống xoay quanh các nhóm thực thể chính:
+- **Danh mục:** `SanPham`, `ThuongHieu`, `LoaiDongHo`, `ThongSoKyThuat`
+- **Người dùng:** `NhanVien`, `KhachHang`, `PhanQuyen`
+- **Giao dịch:** `HoaDon`, `HoaDonChiTiet`
+- **Hệ thống:** `NhatKyHoatDong`
 
-Sản phẩm: SanPham, ThuongHieu, LoaiDongHo, ThongSoKyThuat
+## 🚀 Cài đặt và chạy dự án
 
-Con người: NhanVien, KhachHang, PhanQuyen
+### Yêu cầu môi trường
 
-Giao dịch & Hệ thống: HoaDon, HoaDonChiTiet, NhatKyHoatDong (hoặc log file tương đương).
+- Windows 10/11.
+- Visual Studio 2022 có workload **.NET desktop development**.
+- .NET 8 SDK.
+- SQL Server hoặc SQL Server Express.
+
+### Các bước thực hiện
+
+1. Clone repository và mở solution `LTQL_QLBHDongHo.sln` bằng Visual Studio.
+2. Tạo database `QLBH_DongHo` trên SQL Server.
+3. Mở `App.config` và cập nhật `Server` trong chuỗi kết nối cho phù hợp với máy.
+4. Chọn project `LTQL_QLBHDongHo` làm **Startup Project**.
+5. Build và chạy bằng `Ctrl + F5` hoặc `F5`.
+
+Ứng dụng sẽ tự động áp dụng các migration hiện có khi khởi động. Nếu cần
+thực hiện thủ công trong **Package Manager Console**, chạy:
+
+```powershell
+Update-Database
+```
+
+Khi thay đổi model, tạo migration mới bằng:
+
+```powershell
+Add-Migration TenMigration
+Update-Database
+```
+
+## 🗃️ Cấu hình cơ sở dữ liệu
+
+Chuỗi kết nối được cấu hình trong `App.config`:
+
+```xml
+<connectionStrings>
+  <add name="ChuoiKetNoi"
+       connectionString="Server=TEN_MAY_CHU;Database=QLBH_DongHo;Trusted_Connection=True;TrustServerCertificate=True;"
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
+```
+
+> Không đưa thông tin đăng nhập hoặc chuỗi kết nối chứa mật khẩu thật lên
+> repository.
+
+## 📝 Ghi chú
+
+- Đây là đồ án môn **Lập trình quản lý**.
+- Giao diện và nghiệp vụ được xây dựng hướng tới quy trình bán đồng hồ tại
+  cửa hàng bán lẻ.
+- Dữ liệu lịch sử hóa đơn được ưu tiên giữ ổn định ngay cả khi thông tin gốc
+  của sản phẩm, khách hàng hoặc nhân viên thay đổi.
+
+---
+
+<div align="center">
+
+**DUY WATCHES · Watch Store Management System**
+
+</div>

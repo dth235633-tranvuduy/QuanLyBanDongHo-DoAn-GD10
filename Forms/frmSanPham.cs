@@ -907,7 +907,7 @@ namespace LTQL_QLBHDongHo.Forms
             if (!decimal.TryParse(so, out var number)) return;
 
             isFormattingGia = true;
-            txtGiaBan.Text = string.Format(CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", number);
+            txtGiaBan.Text = string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:N0}", number);
             txtGiaBan.SelectionStart = txtGiaBan.Text.Length;
             isFormattingGia = false;
         }
